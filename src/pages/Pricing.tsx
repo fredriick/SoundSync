@@ -9,11 +9,12 @@ export default function Pricing() {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Navbar />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-card py-16 md:py-24">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
+        {/* Hero Section with enhanced animation */}
+        <section className="bg-card py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-beatforge-500/20 to-transparent pointer-events-none" />
+          <div className="container relative">
+            <div className="mx-auto max-w-3xl text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
+              <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl bg-gradient-to-r from-beatforge-500 to-beatforge-300 bg-clip-text text-transparent">
                 Simple, Transparent Pricing
               </h1>
               <p className="mb-8 text-lg text-muted-foreground">
@@ -23,13 +24,13 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Pricing Plans */}
+        {/* Pricing Plans with staggered animations */}
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {/* Basic Plan */}
-              <div className="flex flex-col rounded-lg border bg-card p-8 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500">
+              <div className="group flex flex-col rounded-lg border bg-card p-8 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500 transition-transform group-hover:scale-110">
                   <Headphones className="h-6 w-6" />
                 </div>
                 <h2 className="mb-2 text-2xl font-bold">Basic</h2>
@@ -66,11 +67,11 @@ export default function Pricing() {
               </div>
 
               {/* Pro Plan */}
-              <div className="relative flex flex-col rounded-lg border border-beatforge-500 bg-card p-8 shadow-md">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-beatforge-500 px-4 py-1 text-xs font-bold text-white">
+              <div className="relative flex flex-col rounded-lg border-2 border-beatforge-500 bg-card p-8 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-beatforge-500 px-4 py-1 text-xs font-bold text-white animate-bounce">
                   MOST POPULAR
                 </div>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500 transition-transform group-hover:scale-110">
                   <Music3 className="h-6 w-6" />
                 </div>
                 <h2 className="mb-2 text-2xl font-bold">Pro</h2>
@@ -111,8 +112,8 @@ export default function Pricing() {
               </div>
 
               {/* Premium Plan */}
-              <div className="flex flex-col rounded-lg border bg-card p-8 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500">
+              <div className="group flex flex-col rounded-lg border bg-card p-8 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-beatforge-100 dark:bg-beatforge-900 text-beatforge-500 transition-transform group-hover:scale-110">
                   <ShoppingCart className="h-6 w-6" />
                 </div>
                 <h2 className="mb-2 text-2xl font-bold">Premium</h2>
@@ -159,46 +160,53 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* FAQ Section with improved animations */}
         <section className="bg-card py-16 md:py-24">
           <div className="container">
-            <div className="mb-12 text-center">
-              <h2 className="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
+            <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <h2 className="mb-3 text-3xl font-bold md:text-4xl bg-gradient-to-r from-beatforge-500 to-beatforge-300 bg-clip-text text-transparent">
+                Frequently Asked Questions
+              </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
                 Find answers to common questions about our services and subscription plans.
               </p>
             </div>
             <div className="mx-auto max-w-3xl divide-y">
-              <div className="py-6">
-                <h3 className="mb-3 text-lg font-medium">Can I upgrade or downgrade my plan?</h3>
-                <p className="text-muted-foreground">
-                  Yes, you can upgrade or downgrade your subscription at any time. Changes will take effect on your next billing cycle.
-                </p>
-              </div>
-              <div className="py-6">
-                <h3 className="mb-3 text-lg font-medium">What payment methods do you accept?</h3>
-                <p className="text-muted-foreground">
-                  We accept all major credit cards, PayPal, and Apple Pay.
-                </p>
-              </div>
-              <div className="py-6">
-                <h3 className="mb-3 text-lg font-medium">Can I cancel my subscription?</h3>
-                <p className="text-muted-foreground">
-                  Yes, you can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period.
-                </p>
-              </div>
-              <div className="py-6">
-                <h3 className="mb-3 text-lg font-medium">What happens to my downloads if I cancel?</h3>
-                <p className="text-muted-foreground">
-                  Any files you've downloaded are yours to keep, even after cancellation, according to the license terms at the time of download.
-                </p>
-              </div>
-              <div className="py-6">
-                <h3 className="mb-3 text-lg font-medium">How do mixing and mastering credits work?</h3>
-                <p className="text-muted-foreground">
-                  Each credit allows you to submit one track for professional mixing or mastering. Credits reset each month and don't roll over.
-                </p>
-              </div>
+              {[
+                {
+                  question: "Can I upgrade or downgrade my plan?",
+                  answer: "Yes, you can upgrade or downgrade your subscription at any time. Changes will take effect on your next billing cycle."
+                },
+                {
+                  question: "What payment methods do you accept?",
+                  answer: "We accept all major credit cards, PayPal, and Apple Pay."
+                },
+                {
+                  question: "Can I cancel my subscription?",
+                  answer: "Yes, you can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period."
+                },
+                {
+                  question: "What happens to my downloads if I cancel?",
+                  answer: "Any files you've downloaded are yours to keep, even after cancellation, according to the license terms at the time of download."
+                },
+                {
+                  question: "How do mixing and mastering credits work?",
+                  answer: "Each credit allows you to submit one track for professional mixing or mastering. Credits reset each month and don't roll over."
+                }
+              ].map((faq, index) => (
+                <div 
+                  key={index} 
+                  className="py-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <h3 className="mb-3 text-lg font-medium hover:text-beatforge-500 transition-colors">
+                    {faq.question}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
