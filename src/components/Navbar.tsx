@@ -1,11 +1,12 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Music, ShoppingCart } from "lucide-react";
+import { CartSheet } from "./CartSheet";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -34,8 +35,16 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" size="icon">
+          <Button 
+            variant="ghost" 
+            size="icon"
+            onClick={() => setIsCartOpen(true)}
+            className="relative hover:scale-105 transition-transform duration-200"
+          >
             <ShoppingCart className="h-5 w-5" />
+            <span className="absolute -top-1 -right-1 bg-beatforge-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              2
+            </span>
           </Button>
           <Link to="/sign-in">
             <Button variant="ghost">Sign In</Button>
@@ -100,6 +109,8 @@ export function Navbar() {
           </nav>
         </div>
       )}
+
+      <CartSheet isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
 }
