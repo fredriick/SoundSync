@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Music, Headphones, ShoppingCart } from "lucide-react";
+import { Music, ShoppingCart } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
             <Music className="h-6 w-6 text-beatforge-500" />
-            <span className="text-xl font-bold">BeatForge</span>
+            <span className="text-xl font-bold">Nades</span>
           </Link>
         </div>
 
@@ -37,8 +37,12 @@ export function Navbar() {
           <Button variant="ghost" size="icon">
             <ShoppingCart className="h-5 w-5" />
           </Button>
-          <Button variant="ghost">Sign In</Button>
-          <Button>Get Started</Button>
+          <Link to="/sign-in">
+            <Button variant="ghost">Sign In</Button>
+          </Link>
+          <Link to="/get-started">
+            <Button>Get Started</Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -86,8 +90,12 @@ export function Navbar() {
               Pricing
             </Link>
             <div className="flex gap-2 mt-2">
-              <Button variant="outline" className="flex-1">Sign In</Button>
-              <Button className="flex-1">Get Started</Button>
+              <Link to="/sign-in" className="flex-1">
+                <Button variant="outline" className="w-full">Sign In</Button>
+              </Link>
+              <Link to="/get-started" className="flex-1">
+                <Button className="w-full">Get Started</Button>
+              </Link>
             </div>
           </nav>
         </div>
