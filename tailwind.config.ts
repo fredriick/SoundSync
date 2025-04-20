@@ -52,6 +52,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+                beatforge: {
+                    50: '#f3f0ff',
+                    100: '#e9e3ff',
+                    200: '#d4cbff',
+                    300: '#b8a5ff',
+                    400: '#9b7aff',
+                    500: '#8b5cf6',
+                    600: '#7e42e6',
+                    700: '#6d31ce',
+                    800: '#5a29a7',
+                    900: '#4b2387',
+                    950: '#2e1366',
+                },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
