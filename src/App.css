@@ -33,8 +33,16 @@
   }
 }
 
+.marketplace-item {
+  @apply transition-all duration-300 ease-in-out hover:translate-y-[-4px] hover:shadow-lg;
+}
+
 .card {
-  padding: 2em;
+  @apply glass-morphism transition-all duration-300;
+}
+
+.card:hover {
+  @apply shadow-lg transform -translate-y-1;
 }
 
 .read-the-docs {

@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +13,12 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const PageWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+    {children}
+  </div>
+);
+
 const App = () => (
   <ThemeProvider defaultTheme="dark">
     <QueryClientProvider client={queryClient}>
@@ -20,12 +27,12 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/" element={<PageWrapper><Index /></PageWrapper>} />
+            <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+            <Route path="/marketplace" element={<PageWrapper><Marketplace /></PageWrapper>} />
+            <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
