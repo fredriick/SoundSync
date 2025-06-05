@@ -1,6 +1,4 @@
-
 import { Link } from "react-router-dom";
-import { Music } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,8 +7,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col">
             <Link to="/" className="flex items-center gap-2">
-              <Music className="h-6 w-6 text-beatforge-500" />
-              <span className="text-xl font-bold">BeatForge</span>
+              <img src="/assets/logo.svg" alt="SoundSync" className="h-8 w-8" />
+              <span className="text-xl font-bold">SoundSync</span>
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
               Professional mixing, mastering, and audio marketplace for producers and artists.
@@ -98,7 +96,7 @@ export function Footer() {
         
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BeatForge. All rights reserved.
+            © {new Date().getFullYear()} SoundSync. All rights reserved.
           </p>
           
           <div className="flex items-center gap-4">
@@ -112,8 +110,10 @@ export function Footer() {
               Cookie Policy
             </Link>
           </div>
+
         </div>
       </div>
     </footer>
   );
 }
+

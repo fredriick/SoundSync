@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="#111827" stroke="#6D28D9" stroke-width="2"/>
+  
+  <!-- Simplified Soundwave -->
+  <path d="M14 32 Q 20 22, 26 32 Q 32 42, 38 32 Q 44 22, 50 32" stroke="#8B5CF6" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Music Note -->
+  <circle cx="40" cy="25" r="4" fill="#7C3AED"/>
+  <path d="M40 25 L40 38" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 38 C40 40, 38 42, 35 42 C32 42, 30 40, 30 38 C30 36, 32 34, 35 34 C38 34, 40 36, 40 38" fill="#7C3AED"/>
+</svg> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

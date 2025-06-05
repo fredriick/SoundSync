@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface ServiceCardProps {
   title: string;
@@ -10,6 +10,7 @@ interface ServiceCardProps {
   price: string;
   popular?: boolean;
   className?: string;
+  id?: string;
 }
 
 export function ServiceCard({
@@ -20,7 +21,15 @@ export function ServiceCard({
   price,
   popular = false,
   className,
+  id = title.toLowerCase().replace(/\s+/g, "-"),
 }: ServiceCardProps) {
+  const serviceSlug = title.toLowerCase().replace(/\s+/g, "-");
+  
+  // Determine the appropriate link based on the service
+  const serviceLink = title === "Full Production Package" 
+    ? `/full-production-detail` 
+    : `/services/${serviceSlug}`;
+  
   return (
     <div
       className={cn(
@@ -39,7 +48,13 @@ export function ServiceCard({
       </div>
       <h3 className="mb-2 text-xl font-bold">{title}</h3>
       <p className="mb-4 text-sm text-muted-foreground">{description}</p>
-      <div className="mb-6 text-3xl font-bold">{price}</div>
+      <div className="mb-6 text-3xl font-bold">
+        {price === "Contact Us" ? (
+          <span className="text-beatforge-500">{price}</span>
+        ) : (
+          price
+        )}
+      </div>
       <ul className="mb-6 space-y-2 text-sm">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2">
@@ -59,8 +74,13 @@ export function ServiceCard({
           </li>
         ))}
       </ul>
-      <Button className={popular ? "bg-beatforge-500 hover:bg-beatforge-600" : ""}>
-        Get Started
+      <Button 
+        className={popular ? "bg-beatforge-500 hover:bg-beatforge-600" : ""}
+        asChild
+      >
+        <Link to={serviceLink}>
+          {title === "Full Production Package" && price === "Contact Us" ? "Contact Us" : "Learn More"}
+        </Link>
       </Button>
     </div>
   );

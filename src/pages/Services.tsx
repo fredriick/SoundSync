@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -38,7 +37,7 @@ export default function Services() {
                   "EQ & compression",
                   "Delivery in 5-7 days"
                 ]}
-                price="$149"
+                price="$500"
               />
               <ServiceCard
                 title="Mastering"
@@ -51,7 +50,7 @@ export default function Services() {
                   "2 revision rounds",
                   "Delivery in 3-5 days"
                 ]}
-                price="$79"
+                price="$200"
                 popular={true}
               />
               <ServiceCard
@@ -65,7 +64,7 @@ export default function Services() {
                   "Stems delivery",
                   "Delivery in 7-10 days"
                 ]}
-                price="$299"
+                price="$700"
               />
               <ServiceCard
                 title="Vocal Tuning"
@@ -78,7 +77,7 @@ export default function Services() {
                   "2 revision rounds",
                   "Delivery in 2-4 days"
                 ]}
-                price="$99"
+                price="$50"
               />
               <ServiceCard
                 title="Sound Design"
@@ -91,7 +90,7 @@ export default function Services() {
                   "2 revision rounds",
                   "Delivery in 5-7 days"
                 ]}
-                price="$199"
+                price="$150"
               />
               <ServiceCard
                 title="Full Production Package"
@@ -104,7 +103,8 @@ export default function Services() {
                   "4 revision rounds",
                   "Delivery in 10-14 days"
                 ]}
-                price="$499"
+                price="Contact Us"
+                popular={true}
               />
             </div>
           </div>
